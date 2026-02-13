@@ -2,6 +2,13 @@ from random import randrange
 
 import pytest
 
+from generators.player import Player
+
+
+@pytest.fixture
+def get_player_generator():
+    return Player
+
 
 @pytest.fixture
 def get_number():
@@ -20,9 +27,4 @@ def calculate():
     return _calculate
 
 
-@pytest.fixture
-def make_number():
-    print("\nI'm getting number")
-    number = randrange(1001, 5001, 5)
-    yield
-    print(f'\nNumber at home {number}')
+
