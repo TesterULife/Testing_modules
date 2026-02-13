@@ -7,11 +7,16 @@ import pytest
 def get_number():
     return randrange(1, 1001, 5)
 
-#unused
+
+# unused
 @pytest.fixture
 def calculate():
     def _calculate(a, b):
-        return a + b
+        try:
+            return a + b
+        except TypeError:
+            return None
+
     return _calculate
 
 
