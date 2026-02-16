@@ -4,7 +4,7 @@ from enums.user_enums import Genders, Statuses
 
 class User(BaseModel):
     id: int
-    name: int
+    name: str
     email: str
     gender: Genders
     status: Statuses

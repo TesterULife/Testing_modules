@@ -5,7 +5,7 @@ from baseclasses.response import Response
 from schemas.users import User
 
 
-def test_getting_users(get_users, make_number):
+def test_getting_users(get_users):
     Response(get_users).assert_status_code(200).validate(User)
 
 
@@ -22,7 +22,7 @@ def test_another():
     'first_value, second_value, result',[
         (1, 2, 3),
         (-1, 2, 1),
-        (-7, -2, -5),
+        (-7, -2, -9),
         ('a', 2, None),
         ('b', 'c', 'bc')
 
